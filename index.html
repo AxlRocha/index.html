@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .step {
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        
+        .substep {
+            margin-left: 30px;
+            color: #666;
+        }
+        
+        .path {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #2c3e50;
+        }
+        
+        .important {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .tip {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tutorial de Processos SAP</h1>
+
+    <div class="section">
+        <h2>1. Visualizar Marcações de Caminhões</h2>
+        <div class="step">1. Entrar no SAP: Bill</div>
+        <div class="step">2. Acessar Centros - 4084 - 4130</div>
+        <div class="step">3. Filtrar por 3 dias atrás até o Atual</div>
+        <div class="step">4. Layout - /MARCAÇÃOPG2</div>
+        <div class="step">5. Filtrar registros não faturados:</div>
+        <div class="substep">• Clique com botão direito em uma linha vazia na coluna "Nota Fiscal"</div>
+        <div class="substep">• Selecionar "Definir Filtro"</div>
+        <div class="substep">• Clicar em OK</div>
+        <div class="step">6. Organizar senhas por ordem Decrescente</div>
+        <div class="substep">• Clique com botão direito na coluna de SENHAS</div>
+    </div>
+
+    <div class="section">
+        <h2>2. Rodar Ordem (Gerar ordem de carregamento)</h2>
+        <div class="step">1. Entrar no SAP alternativo: (CO04)</div>
+        <div class="step">2. Classificação por Nitrogênio:</div>
+        <div class="important">
+            • N ≥ 5%: ETF 12 - 8000396<br>
+            • N ≤ 4%: ETF 11 - 8000279
+        </div>
+        <div class="step">3. Salvar na Pasta:</div>
+        <div class="path">Z:\Produção Fábrica\Ordens de Produção\Ordens de Produção\</div>
+    </div>
+
+    <div class="section">
+        <h2>3. Trocar Produto</h2>
+        <div class="step">1. Entrar no SAP: CO02 (Modificar Ordem de Produção)</div>
+        <div class="step">2. Colar a Ordem de Produção e apertar F6</div>
+        <div class="step">3. Substituir o Código à esquerda pelo novo código</div>
+        <div class="important">
+            Apenas para materiais:<br>
+            • SULFATO 20<br>
+            • SULFATO 21<br>
+            • Embalagens
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Trocar Produto (Não SAM/ETF)</h2>
+        <div class="step">1. Entrar no SAP: B.O.M (Modificar Ordem de Produção)</div>
+        <div class="step">2. Preencher:</div>
+        <div class="substep">• Centro</div>
+        <div class="substep">• Código Produto</div>
+        <div class="substep">• Ordem de Produção</div>
+    </div>
+
+    <div class="section">
+        <h2>5. Atualizar Planilha de Necessidades (Consumo)</h2>
+        <div class="step">1. SAP "de reservas" (Exibir Lista de Reservas):</div>
+        <div class="substep">• Preencher apenas Ordem e Layout</div>
+        <div class="substep">• Na Bill: Copiar Ordens de Produção COM Senha</div>
+        <div class="substep">• Layout = /PDIASSOU</div>
+        <div class="substep">• Colar no MB24 no Excel (Planilha de Necessidades)</div>
+        
+        <div class="step">2. SAP COOIS:</div>
+        <div class="substep">• Lista: Componentes</div>
+        <div class="substep">• Layout: /consumopga2</div>
+        <div class="substep">• Centro de Produção: 4130 e 4084 (nunca simultaneamente)</div>
+        <div class="substep">• Data real do fim: Dia Atual</div>
+    </div>
+
+    <div class="section">
+        <h2>6. Atualizar Planilha de Necessidades (Abastecimento)</h2>
+        <div class="step">1. Entrar no ATLAS: Recepção</div>
+        <div class="step">2. Preencher na Planilha 4130 e 4084 com dados dos produtos descarregados</div>
+    </div>
+
+    <div class="tip">
+        <strong>Dicas importantes:</strong><br>
+        • Sempre verifique os códigos duas vezes antes de fazer alterações<br>
+        • Em caso de dúvidas, consulte seu supervisor<br>
+        • Mantenha um backup dos dados importantes<br>
+        • Certifique-se de salvar todas as alterações
+    </div>
+</body>
+</html>
